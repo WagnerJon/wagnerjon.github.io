@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f8f7f4">
+  <meta name="description" content="A Dewpoint Therapeutics project integrating RNA sequencing and microscopy to explore biomolecular condensates as potential drug targets in type 2 diabetes.">
+  <title>Condensate profiling at Dewpoint Therapeutics · Jonas Wagner</title>
+  <link rel="icon" href="assets/mark.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="assets/site.css">
+</head>
+<body id="top">
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header">
+    <div class="shell header-inner">
+      <a class="brand" href="index.html" aria-label="Jonas Wagner home"><img src="assets/mark.svg" width="34" height="34" alt=""><span>Jonas Wagner</span></a>
+      <nav aria-label="Main navigation">
+        <a href="index.html#projects">Projects</a>
+        <a href="index.html#about">About</a>
+        <a class="nav-external" href="https://github.com/WagnerJon">GitHub <span aria-hidden="true">↗</span></a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main" class="shell case">
+    <a class="breadcrumb" href="index.html#projects"><span aria-hidden="true">←</span> Selected projects</a>
+    <div class="case-header">
+      <p class="eyebrow"><span class="section-index">04</span> Dewpoint Therapeutics · Multimodal analysis</p>
+      <h1>Condensate profiling</h1>
+      <p class="case-lead">At Dewpoint Therapeutics, I combined RNA sequencing and high-content microscopy in a liver cell model of type 2 diabetes (T2D). The goal was to identify potential new drug targets by looking for changes in biomolecular condensates associated with insulin resistance.</p>
+      <ul class="tags" aria-label="Methods"><li>MOFA2</li><li>RNA sequencing</li><li>High-content microscopy</li><li>R</li></ul>
+      <div class="case-actions"><a class="text-link" href="#workflow">See the analysis workflow <span aria-hidden="true">↓</span></a></div>
+    </div>
+
+    <div class="case-details">
+      <section class="case-text">
+        <p class="eyebrow">Motivation</p>
+        <h2>Look beyond the insulin receptor</h2>
+        <p>Biomolecular condensates are dynamic assemblies that concentrate proteins and other molecules within cells. Research on insulin resistance found that insulin stimulation recruits fewer insulin receptors into clusters in insulin-resistant cells. <a href="https://www.nature.com/articles/s41467-022-35176-7">Dall’Agnese et al., 2022</a></p>
+        <p>I asked whether other condensates involved in liver metabolism also changed under conditions that model T2D, and whether those changes coincided with shifts in gene expression.</p>
+      </section>
+      <section class="case-text">
+        <p class="eyebrow">Quantitative approach</p>
+        <h2>Compare matched measurements</h2>
+        <p>The experiments varied glucose and lipid levels in human liver cells, with and without insulin stimulation. I applied a variance-stabilizing transformation to gene-level counts and standardized microscopy features such as condensate size, count, and intensity. I then aligned the two data types by sample and fit Multi-Omics Factor Analysis (MOFA2).</p>
+      </section>
+    </div>
+
+    <section id="workflow" class="case-section" aria-labelledby="workflow-title">
+      <p class="eyebrow">Workflow</p>
+      <h2 id="workflow-title">Separate shared and modality-specific patterns</h2>
+      <figure class="case-figure">
+        <a href="assets/dewpoint-workflow.svg" aria-label="Open the full-size multimodal analysis schematic"><img src="assets/dewpoint-workflow.svg" width="720" height="372" alt="RNA sequencing and microscopy measurements feed into MOFA2, which identifies shared factors and factors specific to one data view."></a>
+        <figcaption><span class="figure-label">FIG. 01</span> <span>Illustrative workflow. The graphic shows the two data inputs and the types of variation the model can capture.</span></figcaption>
+      </figure>
+      <p>Some factors mainly reflected one data type. One factor linked shifts in gene expression to changes in the organization of condensates involving transcription factors. I used the feature weights to see which genes and imaging measurements contributed most. Those associations can help prioritize which condensates to test as potential drug targets.</p>
+    </section>
+
+    <nav class="case-end" aria-label="More projects">
+      <a class="text-link" href="masters-thesis.html">← Master’s thesis</a>
+      <a class="text-link" href="index.html#dewpoint">Dewpoint experience <span aria-hidden="true">→</span></a>
+    </nav>
+  </main>
+
+  <footer class="site-footer"><div class="shell footer-inner"><a href="index.html">Jonas Wagner <span class="footer-divider">/</span> Portfolio</a><a href="#top">Back to top <span aria-hidden="true">↑</span></a></div></footer>
+</body>
+</html>

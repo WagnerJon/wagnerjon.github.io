@@ -1,0 +1,84 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="720" height="372" viewBox="0 0 720 372">
+  <defs>
+    <pattern id="grid" width="24" height="24" patternUnits="userSpaceOnUse">
+      <path d="M24 0H0v24" fill="none" stroke="#272640"/>
+    </pattern>
+    <radialGradient id="background">
+      <stop stop-color="#2b2447"/>
+      <stop offset="1" stop-color="#151426"/>
+    </radialGradient>
+    <marker id="arrow" viewBox="0 0 8 8" refX="7" refY="4" markerWidth="6" markerHeight="6" orient="auto">
+      <path d="m1 1 5 3-5 3" fill="none" stroke="#c0aedf" stroke-linecap="round" stroke-linejoin="round"/>
+    </marker>
+  </defs>
+
+  <rect width="720" height="372" fill="url(#background)"/>
+  <rect width="720" height="372" fill="url(#grid)"/>
+
+  <g fill="#1c1930" stroke="#50466c" stroke-width="1.5">
+    <rect x="36" y="36" width="220" height="130" rx="13"/>
+    <rect x="36" y="206" width="220" height="130" rx="13"/>
+    <rect x="300" y="128" width="120" height="116" rx="14" stroke="#8e78bd"/>
+    <rect x="464" y="36" width="220" height="130" rx="13"/>
+    <rect x="464" y="206" width="220" height="130" rx="13"/>
+  </g>
+
+  <g fill="none" stroke="#b29bd8" stroke-width="2" marker-end="url(#arrow)">
+    <path d="M256 101h13q9 0 9 9v52q0 10 10 10h10"/>
+    <path d="M256 271h13q9 0 9-9v-52q0-10 10-10h10"/>
+    <path d="M420 172h12q10 0 10-10v-52q0-9 9-9h11"/>
+    <path d="M420 200h12q10 0 10 10v52q0 9 9 9h11"/>
+  </g>
+
+  <g fill="#f1eaff" font-family="system-ui, sans-serif" font-size="19" font-weight="650">
+    <text x="56" y="65">RNA sequencing</text>
+    <text x="56" y="235">Microscopy</text>
+    <text x="360" y="218" text-anchor="middle">MOFA2</text>
+    <text x="484" y="65">Shared factors</text>
+    <text x="484" y="235">View-specific factors</text>
+  </g>
+
+  <g fill="#9d87e7">
+    <rect x="57" y="111" width="16" height="31" rx="2"/>
+    <rect x="82" y="93" width="16" height="49" rx="2"/>
+    <rect x="107" y="120" width="16" height="22" rx="2"/>
+    <rect x="132" y="101" width="16" height="41" rx="2"/>
+    <rect x="157" y="86" width="16" height="56" rx="2"/>
+    <rect x="182" y="115" width="16" height="27" rx="2"/>
+    <rect x="207" y="98" width="16" height="44" rx="2"/>
+  </g>
+  <path d="M56 146h174" stroke="#655785"/>
+
+  <g fill="#245552" stroke="#74d9c8" stroke-width="2">
+    <path d="M57 281c1-16 15-30 31-28s29 18 27 33-14 23-28 23-31-11-30-28Z"/>
+    <path d="M116 288c0-16 14-28 29-28s29 12 29 26-15 26-30 26-28-9-28-24Z"/>
+    <path d="M177 278c2-16 18-26 32-22s26 17 24 30-15 20-29 19-29-13-27-27Z"/>
+  </g>
+  <g fill="#b5f3de">
+    <circle cx="79" cy="278" r="4"/><circle cx="94" cy="286" r="5"/><circle cx="77" cy="294" r="3"/>
+    <circle cx="142" cy="283" r="4"/><circle cx="154" cy="293" r="6"/>
+    <circle cx="201" cy="275" r="5"/><circle cx="214" cy="283" r="3"/><circle cx="198" cy="290" r="3"/>
+  </g>
+
+  <g fill="none" stroke="#c0aedf" stroke-width="2">
+    <path d="m335 154 25 24 25-24m-50 38 25-14 25 14"/>
+  </g>
+  <g fill="#b49df1"><circle cx="335" cy="154" r="6"/><circle cx="385" cy="154" r="6"/></g>
+  <g fill="#81decd"><circle cx="335" cy="192" r="6"/><circle cx="385" cy="192" r="6"/></g>
+  <circle cx="360" cy="178" r="8" fill="#f1eaff"/>
+
+  <g fill="#9d87e7">
+    <rect x="484" y="91" width="176" height="16" rx="4"/>
+    <rect x="484" y="258" width="176" height="16" rx="4"/>
+  </g>
+  <g fill="#74d9c8">
+    <rect x="484" y="116" width="176" height="16" rx="4"/>
+    <rect x="484" y="283" width="176" height="16" rx="4"/>
+  </g>
+  <g fill="#f1eaff">
+    <rect x="526" y="91" width="75" height="16" rx="4"/>
+    <rect x="526" y="116" width="75" height="16" rx="4"/>
+    <rect x="498" y="258" width="49" height="16" rx="4"/>
+    <rect x="598" y="283" width="48" height="16" rx="4"/>
+  </g>
+</svg>

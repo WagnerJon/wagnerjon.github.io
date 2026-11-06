@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f8f7f4">
+  <meta name="description" content="A native macOS app for inspecting organoid microscopy and comparing the geometry of reconstructed cells.">
+  <title>Organoid Explorer · Jonas Wagner</title>
+  <link rel="icon" href="assets/mark.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="assets/site.css">
+</head>
+<body id="top">
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header">
+    <div class="shell header-inner">
+      <a class="brand" href="index.html" aria-label="Jonas Wagner home"><img src="assets/mark.svg" width="34" height="34" alt=""><span>Jonas Wagner</span></a>
+      <nav aria-label="Main navigation">
+        <a href="index.html#projects">Projects</a>
+        <a href="index.html#about">About</a>
+        <a class="nav-external" href="https://github.com/WagnerJon">GitHub <span aria-hidden="true">↗</span></a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main" class="shell case">
+    <a class="breadcrumb" href="index.html#projects"><span aria-hidden="true">←</span> Selected projects</a>
+    <div class="case-header">
+      <p class="eyebrow"><span class="section-index">02</span> Scientific software · 3D morphology</p>
+      <h1>Organoid Explorer</h1>
+      <p class="case-lead">Which cells have similar 3D shapes? This macOS app, published as Organoid Atlas, links quantitative shape comparisons to reconstructed surfaces and the original microscopy.</p>
+      <ul class="tags" aria-label="Methods"><li>Swift</li><li>Cellpose-SAM</li><li>u-Segment3D</li><li>3D morphometry</li></ul>
+      <div class="case-actions">
+        <a class="text-link" href="#animation-title">Watch the animation <span aria-hidden="true">↓</span></a>
+        <a class="text-link" href="https://github.com/WagnerJon/organoid-atlas">View repository <span aria-hidden="true">↗</span></a>
+      </div>
+    </div>
+
+    <div class="case-details">
+      <section class="case-text">
+        <p class="eyebrow">Motivation</p>
+        <h2>What makes two cells similar?</h2>
+        <p>Volume and sphericity are useful summaries, but cells with similar measurements can have very different boundaries. I wanted a way to compare surfaces directly and trace each one back to the microscopy it came from.</p>
+      </section>
+      <section class="case-text">
+        <p class="eyebrow">Implementation</p>
+        <h2>Link shape back to the image</h2>
+        <p>The project reconstructed 1,088 cells across 108 microscopy stacks. The viewer connects each cell’s source slices and 3D surface with measurements, embeddings, and nearest-neighbor comparisons.</p>
+      </section>
+    </div>
+
+    <section class="case-section" aria-labelledby="animation-title">
+      <p class="eyebrow">Project animation</p>
+      <h2 id="animation-title">From organoid to shape atlas</h2>
+      <p>Watch the reconstructed cells separate, move into a map of shapes, and reveal a query cell’s nearest matches. The motion is illustrative and the cell surfaces are reconstructed from the project’s microscopy data.</p>
+      <figure class="case-figure">
+        <video controls playsinline preload="none" width="1920" height="1080" poster="assets/organoid-video-poster.webp" aria-label="Silent animation showing an organoid reconstruction, a shape atlas, and three nearest matches">
+          <source src="assets/organoid-atlas.mp4" type="video/mp4">
+          <a href="assets/organoid-atlas.mp4">Open the organoid-to-shape-atlas video</a>
+        </video>
+        <figcaption><span class="figure-label">FIG. 01</span> <span>One reconstructed organoid enters a preview of a UMAP embedding, then three nearby shapes are shown beside the query. Proximity in this exploratory map reflects the shape descriptors used for the embedding.</span></figcaption>
+      </figure>
+    </section>
+
+    <section class="case-section" aria-labelledby="atlas-title">
+      <h2 id="atlas-title">Check a comparison against the source</h2>
+      <p>Linked views make it possible to select a cell in a plot and inspect its reconstructed surface and raw slices. That connection helps distinguish a genuine boundary feature from a segmentation artifact.</p>
+      <figure class="case-figure">
+        <a href="assets/organoid-explorer.webp" aria-label="Open the full-size Organoid Atlas screenshot"><img src="assets/organoid-explorer.webp" width="1700" height="1137" loading="lazy" alt="Organoid Atlas interface with linked scatterplots, a table of measurements, a colored 3D reconstruction, raw slices, and side-by-side cell surfaces"></a>
+        <figcaption><span class="figure-label">FIG. 02</span> <span>The macOS app links plots, reconstructed surfaces, and raw microscopy. The colors in the plots indicate exploratory groups.</span></figcaption>
+      </figure>
+    </section>
+
+    <nav class="case-end" aria-label="More projects"><a class="text-link" href="fiji-vr.html">← Fiji VR</a><a class="text-link" href="masters-thesis.html">Master’s thesis <span aria-hidden="true">→</span></a></nav>
+  </main>
+
+  <footer class="site-footer"><div class="shell footer-inner"><a href="index.html">Jonas Wagner <span class="footer-divider">/</span> Portfolio</a><a href="#top">Back to top <span aria-hidden="true">↑</span></a></div></footer>
+</body>
+</html>

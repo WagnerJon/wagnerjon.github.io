@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f8f7f4">
+  <meta name="description" content="Jonas Wagner’s master’s thesis on multimodal microscopy analysis for microfluidic predator–prey assays.">
+  <title>Master’s thesis · Jonas Wagner</title>
+  <link rel="icon" href="assets/mark.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="assets/site.css">
+</head>
+<body id="top">
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header">
+    <div class="shell header-inner">
+      <a class="brand" href="index.html" aria-label="Jonas Wagner home"><img src="assets/mark.svg" width="34" height="34" alt=""><span>Jonas Wagner</span></a>
+      <nav aria-label="Main navigation">
+        <a href="index.html#projects">Projects</a>
+        <a href="index.html#about">About</a>
+        <a class="nav-external" href="https://github.com/WagnerJon">GitHub <span aria-hidden="true">↗</span></a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main" class="shell case">
+    <a class="breadcrumb" href="index.html#projects"><span aria-hidden="true">←</span> Selected projects</a>
+    <div class="case-header">
+      <p class="eyebrow"><span class="section-index">03</span> Master’s thesis · Heidelberg University · 2026</p>
+      <h1>Predation at the microscale</h1>
+      <p class="case-lead">How do small openings change a predator’s access to its prey? I built a multimodal microscopy pipeline to quantify how soil protists move and how bacterial abundance changes in microfluidic assays.</p>
+      <ul class="tags" aria-label="Methods"><li>Nextflow</li><li>Instance segmentation</li><li>Time-lapse microscopy</li><li>Microfluidics</li></ul>
+      <div class="case-actions"><a class="text-link" href="#focus-title">See the thesis figures <span aria-hidden="true">↓</span></a></div>
+    </div>
+
+    <div class="case-details">
+      <section class="case-text">
+        <p class="eyebrow">Motivation</p>
+        <h2>Can prey shelter in smaller pores?</h2>
+        <p>In soil, pore openings can limit which predators reach their prey. To study that effect, EMBL Heidelberg’s Van Gestel group ran assays with 1, 2, and 10 µm openings in microfluidic chips. I developed the analysis pipeline for the microscopy data from those experiments.</p>
+      </section>
+      <section class="case-text">
+        <p class="eyebrow">Quantitative approach</p>
+        <h2>Measure predators, prey, and movement</h2>
+        <p>I built a Nextflow workflow that aligns time series and applies channel-specific models. Custom YOLO models segmented objects in label-free microscopy (DIC) and red exclusion-dye images. An ilastik classifier measured the area covered by fluorescently labeled bacteria. The workflow yielded more than 300,000 protist detections across the assays.</p>
+      </section>
+    </div>
+
+    <section class="case-section" aria-labelledby="focus-title">
+      <p class="eyebrow">Method</p>
+      <h2 id="focus-title">Link the planes, keep the clearest view</h2>
+      <p>One protist can appear in several optical sections. Within each time point, I linked masks across the 11 DIC focal planes and chose one plane per object for measuring its size, shape, and texture. The final focus score combined edge sharpness and contrast with the local background, using model confidence to break ties.</p>
+      <figure class="case-figure">
+        <a class="paper-figure" href="assets/thesis-plane-linking.webp" aria-label="Open the full-size plane-linking schematic"><img src="assets/thesis-plane-linking.webp" width="1050" height="430" alt="Three-step schematic of matching object masks across Z planes, scoring focus per plane, and extracting the highest-scoring plane"></a>
+        <figcaption><span class="figure-label">FIG. 06</span> <span>The thesis schematic shows how the workflow compares mask overlap among nearby detections, scores the candidate planes, and selects the best-focused plane.</span></figcaption>
+      </figure>
+    </section>
+
+    <section class="case-section" aria-labelledby="activity-title">
+      <p class="eyebrow">Result</p>
+      <h2 id="activity-title">Smaller openings limited predator access</h2>
+      <p>At 10 µm, activity extended across the barrier and fluorescent bacterial coverage declined fastest. At 2 µm, activity beyond the barrier was reduced but still detectable. The 1 µm openings appeared largely impassable to protists in these assays. Object counts from DIC and the red exclusion-dye channel also fell as openings narrowed.</p>
+      <figure class="case-figure">
+        <a class="paper-figure" href="assets/thesis-prey-coverage.webp" aria-label="Open the full-size bacterial coverage plot"><img src="assets/thesis-prey-coverage.webp" width="1127" height="429" loading="lazy" alt="Three plots of fluorescent bacterial area over time. The mean area falls most for 10 µm openings, falls less for 2 µm openings, and stays closer to the reference for 1 µm openings."></a>
+        <figcaption><span class="figure-label">FIG. 15</span> <span>Segmented green fluorescence area served as a proxy for bacterial abundance. Bold lines show the geometric mean for each barrier size. The gray band shows variation in controls without soil protists.</span></figcaption>
+      </figure>
+      <figure class="case-figure">
+        <a class="paper-figure" href="assets/thesis-activity.webp" aria-label="Open the full-size activity map"><img src="assets/thesis-activity.webp" width="1013" height="392" loading="lazy" alt="Three space-time heatmaps of mean DIC activity for 10, 2, and 1 µm openings. Activity spans much of the large-barrier image and is increasingly confined for smaller barriers."></a>
+        <figcaption><span class="figure-label">FIG. 18</span> <span>Kymographs of movement-related signal in label-free DIC images. Color represents mean activity across replicates at each horizontal image position and time point. L, M, and S correspond to 10, 2, and 1 µm openings.</span></figcaption>
+      </figure>
+    </section>
+
+    <section class="case-section" aria-labelledby="phenotype-title">
+      <p class="eyebrow">Phenotypic diversity</p>
+      <h2 id="phenotype-title">Size explained the most variation</h2>
+      <p>I compared measurements of size, shape, texture, and intensity with features learned by a Cell-DINO–inspired model. Size was the main axis of variation in the measured features. Both approaches gave exploratory maps of protist phenotypes, with taxonomic identity still unresolved.</p>
+    </section>
+
+    <section class="case-section case-text" aria-labelledby="thesis-title">
+      <p class="eyebrow" id="thesis-title">Thesis title</p>
+      <p><cite>Development of a multi-modal image analysis pipeline to phenotype predator-prey dynamics in microfluidic predation assays.</cite> Jonas Wagner, Heidelberg University, 2026.</p>
+    </section>
+
+    <nav class="case-end" aria-label="More projects"><a class="text-link" href="organoid-explorer.html">← Organoid Explorer</a><a class="text-link" href="dewpoint.html">Condensate profiling <span aria-hidden="true">→</span></a></nav>
+  </main>
+
+  <footer class="site-footer"><div class="shell footer-inner"><a href="index.html">Jonas Wagner <span class="footer-divider">/</span> Portfolio</a><a href="#top">Back to top <span aria-hidden="true">↑</span></a></div></footer>
+</body>
+</html>

@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f8f7f4">
+  <meta name="description" content="A Fiji plugin for viewing microscopy stacks in a browser or in virtual reality.">
+  <title>Fiji VR · Jonas Wagner</title>
+  <link rel="icon" href="assets/mark.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="assets/site.css">
+  <script src="assets/site.js" defer></script>
+</head>
+<body id="top">
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header">
+    <div class="shell header-inner">
+      <a class="brand" href="index.html" aria-label="Jonas Wagner home"><img src="assets/mark.svg" width="34" height="34" alt=""><span>Jonas Wagner</span></a>
+      <nav aria-label="Main navigation">
+        <a href="index.html#projects">Projects</a>
+        <a href="index.html#about">About</a>
+        <a class="nav-external" href="https://github.com/WagnerJon">GitHub <span aria-hidden="true">↗</span></a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main" class="shell case">
+    <a class="breadcrumb" href="index.html#projects"><span aria-hidden="true">←</span> Selected projects</a>
+    <div class="case-header">
+      <p class="eyebrow"><span class="section-index">01</span> Scientific software · Immersive imaging</p>
+      <h1>Fiji VR</h1>
+      <p class="case-lead">A Fiji plugin for examining the 3D structure and time evolution of microscopy samples in a browser or on a compatible VR headset.</p>
+      <ul class="tags" aria-label="Methods"><li>Fiji / ImageJ</li><li>Java</li><li>WebGL</li><li>WebXR</li></ul>
+      <div class="case-actions"><a class="text-link" href="#stack-title">Try the sample stack <span aria-hidden="true">↓</span></a></div>
+    </div>
+
+    <div class="case-details">
+      <section class="case-text">
+        <p class="eyebrow">Motivation</p>
+        <h2>See what lies between slices</h2>
+        <p>Stepping through a microscopy stack makes it hard to see how structures connect in depth. I built Fiji VR to let researchers move between an individual source plane and a view of the whole volume from the same Fiji image.</p>
+      </section>
+      <section class="case-text">
+        <p class="eyebrow">Implementation</p>
+        <h2>Keep the original pixels</h2>
+        <p>The plugin reads Fiji’s channel, depth, and time axes and streams native-resolution image blocks to a browser viewer. You can rotate the volume, inspect source planes, and play time series. The immersive viewer is a prototype and headset testing is pending.</p>
+      </section>
+    </div>
+
+    <section class="case-section" aria-labelledby="stack-title">
+      <p class="eyebrow">Interactive figure</p>
+      <h2 id="stack-title">One stack, two views</h2>
+      <p>Scrub through the source planes to find the shell and the off-center core. Then switch to maximum intensity to see what happens when the brightest signal along each depth column is projected onto a single image.</p>
+      <figure class="case-figure" data-stack>
+        <div class="stack-demo">
+          <div class="stack-view">
+            <img data-stack-fallback src="assets/fiji-projection.webp" width="512" height="512" alt="Maximum-intensity projection of the synthetic shell volume">
+            <canvas width="64" height="64" role="img" hidden></canvas>
+            <img data-stack-source src="assets/fiji-slices.png" width="512" height="576" alt="" hidden>
+          </div>
+          <div class="stack-panel">
+            <h3>Synthetic shell</h3>
+            <p>64 × 64 × 64 voxels from the Fiji VR demo.</p>
+            <div class="stack-controls" data-stack-controls hidden>
+              <label for="view-mode">View</label>
+              <select id="view-mode"><option value="slice">Source plane</option><option value="projection">Maximum intensity</option></select>
+              <label for="depth">Z plane</label>
+              <input type="range" id="depth" min="1" max="64" value="32">
+              <output for="depth view-mode">Plane 32 of 64</output>
+            </div>
+          </div>
+        </div>
+        <figcaption><span class="figure-label">FIG. 01</span> <span>A browser illustration using the project’s synthetic demo data. The full plugin can render and rotate the volume in three dimensions.</span></figcaption>
+      </figure>
+    </section>
+
+    <section class="case-section" aria-labelledby="viewer-title">
+      <h2 id="viewer-title">Inside the viewer</h2>
+      <figure class="case-figure">
+        <a href="assets/fiji-viewer.webp" aria-label="Open the full-size Fiji VR viewer screenshot"><img src="assets/fiji-viewer.webp" width="1280" height="720" loading="lazy" alt="Fiji VR desktop interface with a cyan synthetic volume, rendering controls, and channel, depth, and time sliders"></a>
+        <figcaption><span class="figure-label">FIG. 02</span> <span>The desktop prototype showing a synthetic time series. The controls keep channel, source plane, and time available while the stack is rendered in 3D.</span></figcaption>
+      </figure>
+    </section>
+
+    <nav class="case-end" aria-label="More projects"><a class="text-link" href="index.html#projects">← All projects</a><a class="text-link" href="organoid-explorer.html">Organoid Explorer <span aria-hidden="true">→</span></a></nav>
+  </main>
+
+  <footer class="site-footer"><div class="shell footer-inner"><a href="index.html">Jonas Wagner <span class="footer-divider">/</span> Portfolio</a><a href="#top">Back to top <span aria-hidden="true">↑</span></a></div></footer>
+</body>
+</html>
