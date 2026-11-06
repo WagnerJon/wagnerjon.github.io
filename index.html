@@ -9,6 +9,7 @@
   <link rel="icon" href="assets/mark.svg" type="image/svg+xml">
   <link rel="stylesheet" href="assets/site.css">
   <script src="assets/site.js" defer></script>
+  <script src="assets/ridgeline.js" defer></script>
 </head>
 <body id="top">
   <a class="skip-link" href="#main">Skip to content</a>
@@ -157,10 +158,45 @@
     </section>
   </main>
 
-  <footer class="site-footer">
-    <div class="shell footer-inner">
-      <span>Jonas Wagner <span class="footer-divider">/</span> Portfolio</span>
-      <a href="#top">Back to top <span aria-hidden="true">↑</span></a>
+  <footer id="footer" class="site-footer" data-ridgeline>
+    <div class="footer-frame">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <a class="brand" href="index.html"><img src="assets/mark.svg" width="34" height="34" alt=""><span>Jonas Wagner</span></a>
+          <p>Quantitative biology, microscopy, and multimodal data analysis.</p>
+        </div>
+        <nav class="footer-group" aria-label="Footer projects">
+          <h2>Projects</h2>
+          <ul>
+            <li><a href="fiji-vr.html">Fiji VR</a></li>
+            <li><a href="organoid-explorer.html">Organoid Explorer</a></li>
+            <li><a href="masters-thesis.html">Master’s thesis</a></li>
+            <li><a href="dewpoint.html">Dewpoint Therapeutics</a></li>
+          </ul>
+        </nav>
+        <nav class="footer-group" aria-label="Footer portfolio">
+          <h2>Portfolio</h2>
+          <ul>
+            <li><a href="index.html#projects">Selected work</a></li>
+            <li><a href="index.html#about">About &amp; résumé</a></li>
+          </ul>
+        </nav>
+        <nav class="footer-group" aria-label="Footer profiles">
+          <h2>Elsewhere</h2>
+          <ul>
+            <li><a href="https://github.com/WagnerJon">GitHub <span aria-hidden="true">↗</span></a></li>
+            <li><a href="https://www.linkedin.com/in/wagnerjon4/">LinkedIn <span aria-hidden="true">↗</span></a></li>
+            <li><a href="https://orcid.org/0009-0003-9838-8700">ORCID <span aria-hidden="true">↗</span></a></li>
+          </ul>
+        </nav>
+      </div>
+      <div class="footer-bar">
+        <p>© 2026 Jonas Wagner</p>
+        <a href="#top">Back to top <span aria-hidden="true">↑</span></a>
+      </div>
+      <div class="footer-scene" aria-hidden="true">
+        <canvas width="560" height="175"></canvas>
+      </div>
     </div>
   </footer>
 </body>
